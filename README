@@ -29,5 +29,5 @@ Currently, the following basic functions are implemented (list may not be up to 
 
 The main problem that has slowed down development is that a lot of forums use a completely customized 
 frontend template, or forum list.  The content beneath these seems mostly the same, but until I can 
-find a way to handle the variety in these, you're stuck very variable results depending on the site 
-you're trying to parse.
+find a way to handle the variety in these, you're stuck with very variable results depending on the 
+site you're trying to parse.
