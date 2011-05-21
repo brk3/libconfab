@@ -1,0 +1,42 @@
+package org.confab;
+
+public abstract class BulletinBoardEntity {
+    public BulletinBoardEntity parent = null;
+    public String url;
+    public String title;
+    public String id;
+
+    public BulletinBoardEntity() {
+        url = new String();
+        title = new String();
+        id = new String();
+    }    
+
+    /**
+     * Recursively works its way up the hierarchy to build the fully qualified
+     * url for this entity.
+     * @return  Fully qualified url for this entity.
+     */
+    public String fullURL() {
+        return fullURL(this, "");
+    }
+
+    private String fullURL(BulletinBoardEntity e, String ret) {
+        if (e.parent == null) {
+            return ret;
+        }
+        return fullURL(e.parent, e.parent.url+this.url);
+    }
+
+    public String rootURL() {
+        return rootURL(this);
+    }
+
+    private String rootURL(BulletinBoardEntity e) {
+        if (e.parent == null) {
+            System.out.println("returning: " + e.url);
+            return e.url;
+        }
+        return rootURL(e.parent);
+    }
+}

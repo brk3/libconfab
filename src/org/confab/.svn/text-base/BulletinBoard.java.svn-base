@@ -1,0 +1,12 @@
+package org.confab;
+
+public class BulletinBoard extends BulletinBoardEntity {
+    public User user;
+    public boolean loggedIn;
+
+    public BulletinBoard(String url, User user) {
+        this.url = url;
+        this.user = user;
+        loggedIn = false;
+    }
+}

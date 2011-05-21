@@ -1,0 +1,27 @@
+package org.confab;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Forum extends BulletinBoardEntity {
+    public String description;
+    public String numViewing;
+    public int numTopics;
+    public int numPosts;
+    public List<String> moderators;
+    public List<Forum> subForums;
+    public List<ForumThread> topics;
+
+    public Forum(BulletinBoard parent) {
+        super();
+        this.parent = parent;
+        this.url = parent.url;
+        description = new String(); 
+        numViewing = new String();
+        numTopics = 0;
+        numPosts = 0;
+        moderators = new ArrayList<String>();
+        subForums = new ArrayList<Forum>();
+        topics = new ArrayList<ForumThread>();
+    }
+}

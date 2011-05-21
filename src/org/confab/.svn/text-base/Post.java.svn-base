@@ -1,0 +1,15 @@
+package org.confab;
+
+public class Post extends BulletinBoardEntity {
+    public User author;
+    public String message;
+    public ForumThread parent;
+
+    public Post(ForumThread parent) {
+        super();
+        this.parent = parent;
+        this.url = parent.url;
+        author = new User();
+        message = new String();
+    }
+}
